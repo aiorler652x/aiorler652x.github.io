@@ -1,53 +1,110 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla Amarillo</title>
-    <link rel="stylesheet" href="estilos.css">
+
+    <title>Mi primera página web</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
     <header>
-        <img src="logo.svg" alt="logo">
-        <h2>website</h2>
-        <h1>Top 3 mejores productos para el cuidado del pelo </h1>
+
+        <h1>Araceli Iordan Lerenas </h1>
+
+        <p>Aprendiendo HTML y CSS</p>
+
     </header>
+
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="Info.html">Info</a>
-        <a href="recursos.html">Recursos</a>
-        <a href="contacto.html">Contacto</a>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#sobre-mi">Sobre mí</a>
+
+        <a href="#contacto">Contacto</a>
+
     </nav>
+
     <main>
-        <article>
-            <h2>Olaplex Nº.3 Hair Perfector</h2>
-            <div class="contenido">
-                <img src="imag.avif" alt="img1">
-                <p>Utiliza una tecnología patentada que reconstruye los enlaces de disulfuro rotos en la estructura interna de la fibra capilar, devolviendo la fuerza y la elasticidad.</p>
-        
-        </article>
-        <article>
-            <h2>K18 Leave-In Molecular Repair Hair Mask</h2>
-            <div class="contenido">
-                <img src="imagen.jpg" alt="img1">
-                <p>Actúa en solo 4 minutos mediante péptidos biomiméticos que conectan las cadenas de queratina rotas. Aporta suavidad, elasticidad y un aspecto sano sin apelmazar el cabello.
-                <p>
+
+        <section id="inicio" class="presentacion">
+
+            <h2>¡Bienvenido a mi web!</h2>
+
+<img src="imagen.png" alt="Imagen de presentación" width="300">
+
+            <p>Estoy aprendiendo a crear páginas web con HTML y CSS.</p>
+
+            <button>Descubrir más</button>
+
+        </section>
+
+        <section id="sobre-mi">
+
+            <h2>Sobre mí</h2>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+
+                    <h3>HTML</h3>
+
+                    <p>HTML sirve para crear la estructura de una página web.</p>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <h3>CSS</h3>
+
+                    <p>CSS permite diseñar la página con colores, tamaños y estilos.</p>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <h3>JavaScript</h3>
+
+                    <p>JavaScript permite añadir interactividad a una página web.</p>
+
+                </article>
+                <article class="tarjeta">
+
+                    <h3>Diseño web </h3>
+
+                    <p>El diseño web permite crear páginas atractivas y fáciles de utilizar.</p>
+
+                </article>
+
             </div>
-        </article>
-        <article>
-            <h2>Moroccanoil Treatment Original</h2>
-            <div class="contenido">
-                <img src="images.jpg" alt="img1">
-                <p>Enriquecido con aceite de argán e ingredientes que combaten el encrespamiento, reduce el frizz hasta en un 50% y sella las puntas secas de manera inmediata.
-                
-            </div>
-        </article>
-        <div class="info">
-            <p>Un mal día mejora con un buen corte; un mal corte solo mejora con helado y tiempo... ¡así que ven aquí!"</p>
-            <img src="person.svg" alt="circulo">
-        </div>
+
+        </section>
+
+        <section id="contacto">
+
+            <h2>Contacto</h2>
+
+            <p>Correo: ejemplo@correo.com</p>
+
+        </section>
+
     </main>
-    <footer><p> Araceli Iordan Lerenas 
+
+    <footer>
+
+        <p>© 2026 Mi primera página web</p>
+
+    </footer>
+
 </body>
+
 </html>
