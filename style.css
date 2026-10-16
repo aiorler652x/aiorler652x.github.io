@@ -12,7 +12,7 @@ body {
 
     margin: 0;
 
-    background-color: #cb9cdd;
+    background-color: #97ecc4;
 
     color: #333;
 
@@ -24,7 +24,7 @@ body {
 
 header {
 
-    background-color: #7304a7;
+    background-color: #087435;
 
     color: white;
 
@@ -46,7 +46,7 @@ header h1 {
 
 nav {
 
-    background-color: #1e293b;
+    background-color: #01492e;
 
     text-align: center;
 
@@ -92,7 +92,7 @@ section {
 
 h2 {
 
-    color: #73048a;
+    color: #09803b;
 
 }
 
@@ -116,25 +116,25 @@ h2 {
 
 button {
 
-    background-color: #750270;
+    background-color: #4a494d;
 
     color: white;
 
     border: none;
 
-    padding: 15px 30px;
+    padding: 12px 25px;
 
-    border-radius: 10px;
+    border-radius: 6px;
 
     cursor: pointer;
 
-    font-size: 18px;
+    font-size: 16px;
 
 }
 
 button:hover {
 
-    background-color: #5e027a;
+    background-color: #05941d;
 
 }
 
@@ -160,7 +160,7 @@ button:hover {
 
     padding: 20px;
 
-    border-radius: 50px;
+    border-radius: 30px;
 
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 
@@ -178,7 +178,7 @@ button:hover {
 
 footer {
 
-    background-color: #1e293b;
+    background-color: #50e489;
 
     color: white;
 
