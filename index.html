@@ -1,116 +1,1309 @@
+
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>LÚMEA | Belleza y cuidado capilar</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-    <title> 2ª GD CFGB Informática de Oficina</title>
+<style>
+:root {
+    --rosa: #d9b4ad;
+    --rosa-claro: #f5e8e3;
+    --crema: #fcf8f4;
+    --marron: #76584e;
+    --oscuro: #382c29;
+    --gris: #857772;
+    --blanco: #fff;
+}
 
-    <link rel="stylesheet" href="style.css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--crema);
+    color: var(--oscuro);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(1120px, 88%);
+    margin: auto;
+}
+
+.eyebrow {
+    color: var(--marron);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(34px, 4vw, 48px);
+}
+
+p {
+    color: var(--gris);
+}
+
+/* NAVEGACIÓN */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(252, 248, 244, .95);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #eee4dc;
+}
+
+.navbar {
+    width: min(1200px, 90%);
+    min-height: 82px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    letter-spacing: 5px;
+    color: var(--marron);
+}
+
+.logo span {
+    color: var(--rosa);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 12px;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: #b47f76;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--marron);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #513c35;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--marron);
+    color: var(--marron);
+}
+
+/* PORTADA */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    padding-top: 65px;
+    padding-bottom: 80px;
+}
+
+.hero-text {
+    padding: 20px 0;
+}
+
+.hero h1 {
+    font-size: clamp(54px, 6vw, 82px);
+    letter-spacing: -2px;
+    margin: 22px 0;
+}
+
+.hero h1 em {
+    color: #bd8e85;
+    font-weight: 400;
+}
+
+.hero-text > p {
+    max-width: 440px;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.hero-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--marron);
+}
+
+.hero-image {
+    position: relative;
+    height: 520px;
+}
+
+.hero-image img {
+    height: 100%;
+    border-radius: 180px 180px 8px 8px;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 25px;
+    left: -35px;
+    max-width: 260px;
+    padding: 20px 24px;
+    background: white;
+    box-shadow: 0 12px 40px #513c3515;
+}
+
+.image-label span {
+    display: block;
+    color: #b47f76;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.image-label strong {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* FRANJA */
+
+.promise {
+    background: var(--rosa-claro);
+    padding: 24px 0;
+}
+
+.promise-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 45px;
+}
+
+.promise-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--marron);
+}
+
+.promise-item span {
+    font-size: 20px;
+}
+
+/* PRESENTACIÓN */
+
+.intro {
+    text-align: center;
+    padding: 100px 0 55px;
+}
+
+.intro h2 {
+    margin: 18px 0;
+}
+
+.intro p {
+    max-width: 620px;
+    margin: auto;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* SERVICIOS */
+
+.section {
+    padding: 70px 0 100px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    margin-top: 15px;
+}
+
+.section-heading > p {
+    max-width: 360px;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    padding: 32px 28px;
+    background: white;
+    border: 1px solid #eee4dc;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px #513c350c;
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--rosa-claro);
+    color: var(--marron);
+    font-size: 23px;
+}
+
+.service-number {
+    font-family: "Playfair Display", serif;
+    color: #c9aaa0;
+    font-size: 19px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 13px;
+}
+
+.service-card p {
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 23px;
+}
+
+.service-card a {
+    color: var(--marron);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* PRECIOS */
+
+.pricing {
+    background: #f3e8e1;
+    padding: 95px 0;
+}
+
+.pricing .section-heading {
+    margin-bottom: 40px;
+}
+
+.pricing-box {
+    display: grid;
+    grid-template-columns: .75fr 1.4fr;
+    background: white;
+    box-shadow: 0 20px 60px #513c350b;
+}
+
+.pricing-side {
+    padding: 45px 35px;
+    background: var(--marron);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-side .eyebrow {
+    color: #ead3c9;
+}
+
+.pricing-side h3 {
+    font-size: 36px;
+    margin: 25px 0 18px;
+}
+
+.pricing-side p {
+    color: #f0dfd7;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.pricing-side .brand-watermark {
+    margin-top: 40px;
+    color: #ffffff25;
+    font-family: "Playfair Display", serif;
+    font-size: 39px;
+    letter-spacing: 5px;
+}
+
+.pricing-content {
+    padding: 38px;
+}
+
+.pricing-content h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 12px 0;
+    border-bottom: 1px solid #eadfd7;
+    text-align: left;
+    color: #9b8277;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+th:last-child, td:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0e9e4;
+    font-size: 12px;
+}
+
+td strong {
+    display: block;
+    font-weight: 600;
+}
+
+td small {
+    display: block;
+    color: #a1938b;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+td.price {
+    color: var(--marron);
+    font-weight: 700;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* PRODUCTOS */
+
+.products {
+    padding: 100px 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #eee4dc;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px #513c350c;
+}
+
+.product-photo {
+    height: 265px;
+    overflow: hidden;
+    background: var(--rosa-claro);
+}
+
+.product-photo img {
+    height: 100%;
+    transition: transform .6s;
+}
+
+.product-card:hover .product-photo img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-category {
+    color: #b18478;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.product-info h3 {
+    margin-top: 8px;
+    font-size: 23px;
+}
+
+.product-info p {
+    font-size: 11px;
+    line-height: 1.9;
+    margin: 9px 0 18px;
+}
+
+.product-price {
+    display: block;
+    padding-top: 14px;
+    border-top: 1px solid #eee4dc;
+    color: var(--marron);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* DIFERENCIACIÓN */
+
+.why-us {
+    background: #f3e8e1;
+    padding: 100px 0;
+}
+
+.why-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px;
+}
+
+.why-heading h2 {
+    margin: 18px 0;
+}
+
+.why-heading p {
+    font-size: 13px;
+    line-height: 2;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 55px;
+}
+
+.why-item {
+    display: flex;
+    gap: 18px;
+    padding: 27px 0;
+    border-top: 1px solid #deccc1;
+}
+
+.why-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fcf8f4;
+    color: var(--marron);
+    font-size: 21px;
+}
+
+.why-item h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.why-item p {
+    font-size: 11px;
+    line-height: 2;
+}
+
+/* CIERRE */
+
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--marron);
+    color: white;
+}
+
+.cta .eyebrow {
+    color: #e6c9bd;
+}
+
+.cta h2 {
+    font-size: clamp(37px, 5vw, 58px);
+    margin: 20px 0;
+}
+
+.cta h2 em {
+    color: #e5c4b8;
+}
+
+.cta p {
+    color: #f0dfd7;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    background: var(--crema);
+    color: var(--marron);
+}
+
+.cta .btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* PIE */
+
+footer {
+    padding: 45px 20px 25px;
+    text-align: center;
+}
+
+footer .logo {
+    display: inline-block;
+}
+
+footer p {
+    font-size: 11px;
+    margin: 10px 0 22px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: var(--gris);
+    font-size: 11px;
+}
+
+footer > small {
+    display: block;
+    border-top: 1px solid #eee4dc;
+    padding-top: 20px;
+    color: #a1938b;
+    font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 16px 0;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .services-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-box {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-side {
+        min-height: 270px;
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        width: 90%;
+    }
+
+    .navbar .btn {
+        padding: 10px 13px;
+    }
+
+    nav {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 6px 0;
+    }
+
+    nav a {
+        flex-shrink: 0;
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero-image {
+        height: 380px;
+        margin-left: 15px;
+    }
+
+    .image-label {
+        left: -15px;
+        bottom: 18px;
+    }
+
+    .promise-inner {
+        gap: 16px;
+        align-items: flex-start;
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .intro {
+        padding: 75px 0 35px;
+    }
+
+    .section,
+    .products,
+    .why-us {
+        padding: 65px 0;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 17px;
+    }
+
+    .services-grid,
+    .products-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 27px;
+    }
+
+    .pricing {
+        padding: 65px 0;
+    }
+
+    .pricing-side {
+        padding: 32px 25px;
+    }
+
+    .pricing-content {
+        padding: 23px 15px;
+    }
+
+    .pricing-content h3 {
+        font-size: 24px;
+    }
+
+    td {
+        padding: 13px 0;
+        font-size: 11px;
+    }
+
+    td strong {
+        font-size: 11px;
+    }
+
+    td small {
+        font-size: 9px;
+    }
+
+    td.price {
+        padding-left: 8px;
+        font-size: 10px;
+    }
+
+    .product-photo {
+        height: 280px;
+    }
+
+    .why-item {
+        gap: 14px;
+    }
+
+    .cta {
+        padding: 75px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
+<header>
+    <div class="navbar">
+        <a class="logo" href="#inicio">LÚMEA<span>.</span></a>
 
-        <h1> 2ª GD CFGB Informática de Oficina</h1>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#precios">Tarifas</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotras">Nosotras</a>
+        </nav>
 
-        <p>Aprendiendo HTML y CSS</p>
+        <a href="#precios" class="btn btn-outline">Ver precios</a>
+    </div>
+</header>
 
-    </header>
+<main>
 
-    <nav>
+<!-- PORTADA -->
+<section class="hero container" id="inicio">
+    <div class="hero-text">
+        <span class="eyebrow">TU BELLEZA, TU ESENCIA</span>
 
-        <a href="#inicio">Inicio</a>
+        <h1>Un cabello<br>bonito, <em>tú misma.</em></h1>
 
-        <a href="#sobre-mi">Sobre mí</a>
+        <p>
+            En LÚMEA transformamos el cuidado de tu cabello
+            en un momento para ti. Descubre nuestros servicios,
+            tratamientos y productos elegidos para acompañarte
+            en cada etapa de tu belleza.
+        </p>
 
-        <a href="#contacto">Contacto</a>
+        <div class="hero-actions">
+            <a href="#servicios" class="btn btn-primary">
+                DESCUBRIR SERVICIOS
+            </a>
+            <a href="#precios" class="hero-link">
+                Ver tarifas →
+            </a>
+        </div>
+    </div>
 
-    </nav>
+    <div class="hero-image">
+        <img
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
+            alt="Inspiración de belleza y cuidado personal">
+        <div class="image-label">
+            <span>EL UNIVERSO LÚMEA</span>
+            <strong>Un momento de belleza solo para ti.</strong>
+        </div>
+    </div>
+</section>
 
-    <main>
+<!-- VALORES -->
+<section class="promise">
+    <div class="container promise-inner">
+        <div class="promise-item"><span>♡</span> Atención personalizada</div>
+        <div class="promise-item"><span>✧</span> Cuidado capilar</div>
+        <div class="promise-item"><span>❀</span> Belleza natural</div>
+        <div class="promise-item"><span>☼</span> Tu momento de bienestar</div>
+    </div>
+</section>
 
-        <section id="inicio" class="presentacion">
-             <img src="IMAGEN.jpg" alt="Imagen de presentación" width="300">
+<!-- INTRODUCCIÓN -->
+<section class="intro container">
+    <span class="eyebrow">BIENVENIDA A LÚMEA</span>
+    <h2>La belleza está en los detalles</h2>
+    <p>
+        Queremos que cada visita sea especial. Por eso apostamos
+        por escuchar tus preferencias, asesorarte con cercanía
+        y encontrar los cuidados que mejor se adaptan a tu cabello.
+    </p>
+</section>
 
-            <h2>¡Bienvenido a mi web!</h2>
+<!-- SERVICIOS -->
+<section class="section container" id="servicios">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">NUESTROS SERVICIOS</span>
+            <h2>Tu cabello, nuestro cuidado</h2>
+        </div>
+        <p>
+            Desde un cambio de estilo hasta un ritual de cuidado,
+            descubre nuestra propuesta de peluquería femenina.
+        </p>
+    </div>
 
-            <p>Estoy aprendiendo a crear páginas web con HTML y CSS.</p>
-          
-            <a href="https://sites.google.com/d/1kStG5Sk_oLKqMxswQTuZCiFTu92sWRNF/p/1G6OKuX1jX69RsB5J-FPltq-qOdmsNuap/edit"> <button><p>Descubrir más</p></button></a>
+    <div class="services-grid">
 
-        </section>
-
-        <section id="sobre-mi">
-
-            <h2>Sobre mí</h2>
-
-            <div class="tarjetas">
-
-                <article class="tarjeta">
-
-                    <h3>REDES </h3>
-
-                    <p>La asignatura de Redes de Computadores es fundamental para proporcionar a los estudiantes una visión unificada de la comunicación entre computadores.</p>
-
-                </article>
-
-                <article class="tarjeta">
-
-                    <h3>OFIMATICA </h3>
-
-                    <p>La asignatura de ofimática es fundamental para mejorar la productividad y facilitar la organización de documentos, datos y comunicaciones en una empresa.</p>
-
-                </article>
-
-                <article class="tarjeta">
-
-                    <h3>PROYECTO INTERMODULAR </h3>
-
-                    <p>En un Proyecto Intermodular se trabajan cuatro temas clave: búsqueda de información, innovación, investigación aplicada y emprendimiento, integrando los contenidos de todos los módulos del ciclo formativo.<P></P>
-                </article>
-                 <article class="tarjeta">
-
-                    <h3>CIENCIAS APLICADAS I  </h3>
-
-                    <p>La asignatura de Ciencias Aplicadas I tiene como objetivo proporcionar a los estudiantes una base sólida en ciencias aplicadas, preparándolos para el mundo laboral y profesional.</p>
-
-                </article>
- <article class="tarjeta">
-
-                    <h3>COMUNICACION Y CIENCIAS </h3>
-
-                    <p>La asignatura de Comunicación y Ciencias es fundamental para entender cómo se generan, transmiten y reciben mensajes en diferentes contextos.</p>
-
-                </article>
-
-
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">✂</span>
+                <span class="service-number">01</span>
             </div>
+            <h3>Cortes y peinados</h3>
+            <p>
+                Cortes personalizados y peinados adaptados a tu estilo.
+                El lavado se incluye según el servicio contratado.
+            </p>
+            <a href="#precios">Descubrir tarifas ↗</a>
+        </article>
 
-        </section>
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">✧</span>
+                <span class="service-number">02</span>
+            </div>
+            <h3>Coloración</h3>
+            <p>
+                Tintes, baños de color y cobertura de canas.
+                Te ayudamos a elegir el tono ideal para ti.
+            </p>
+            <a href="#precios">Descubrir tarifas ↗</a>
+        </article>
 
-        <section id="contacto">
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">❋</span>
+                <span class="service-number">03</span>
+            </div>
+            <h3>Mechas y balayage</h3>
+            <p>
+                Técnicas de iluminación que aportan luz y dimensión.
+                El precio depende de la longitud y del trabajo necesario.
+            </p>
+            <a href="#precios">Consultar presupuesto ↗</a>
+        </article>
 
-            <h2>Contacto</h2>
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">♡</span>
+                <span class="service-number">04</span>
+            </div>
+            <h3>Tratamientos capilares</h3>
+            <p>
+                Hidratación, nutrición y cuidado cosmético
+                según el estado y las necesidades de tu cabello.
+            </p>
+            <a href="#precios">Descubrir tarifas ↗</a>
+        </article>
 
-            <p>Correo: AIORLER652X@.com</p>
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">❀</span>
+                <span class="service-number">05</span>
+            </div>
+            <h3>Peinados para eventos</h3>
+            <p>
+                Recogidos y peinados para bodas, graduaciones
+                y celebraciones especiales.
+            </p>
+            <a href="#precios">Solicitar presupuesto ↗</a>
+        </article>
 
-        </section>
+        <article class="service-card">
+            <div class="service-top">
+                <span class="service-icon">☼</span>
+                <span class="service-number">06</span>
+            </div>
+            <h3>Asesoramiento capilar</h3>
+            <p>
+                Recomendaciones personalizadas para elegir servicios
+                y productos acordes a tu rutina.
+            </p>
+            <a href="#precios">Descubrir tarifas ↗</a>
+        </article>
 
-    </main>
+    </div>
+</section>
 
-    <footer>
+<!-- PRECIOS -->
+<section class="pricing" id="precios">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">CATÁLOGO COMERCIAL</span>
+                <h2>Precios pensados para ti</h2>
+            </div>
+            <p>
+                Transparencia y confianza: conoce nuestras tarifas
+                orientativas antes de elegir tu próximo servicio.
+            </p>
+        </div>
 
-        <p>© 2026 Mi primera página web</p>
+        <div class="pricing-box">
+            <aside class="pricing-side">
+                <div>
+                    <span class="eyebrow">UN MOMENTO PARA TI</span>
+                    <h3>Pequeños cuidados.<br>Grandes sensaciones.</h3>
+                    <p>
+                        Cada cabello es único. Antes de comenzar,
+                        valoramos tus necesidades y te informamos
+                        del presupuesto previsto.
+                    </p>
+                </div>
+                <div class="brand-watermark">LÚMEA</div>
+            </aside>
 
-    </footer>
+            <div class="pricing-content">
+                <h3>Nuestras tarifas</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Lavado y peinado</strong>
+                                <small>Incluye masaje capilar</small>
+                            </td>
+                            <td class="price">20 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Corte de mujer</strong>
+                                <small>Corte personalizado</small>
+                            </td>
+                            <td class="price">20 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Corte, lavado y peinado</strong>
+                                <small>Servicio completo</small>
+                            </td>
+                            <td class="price">28 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Tinte y peinado</strong>
+                                <small>Coloración y acabado</small>
+                            </td>
+                            <td class="price">38 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Mechas y peinado</strong>
+                                <small>Según longitud y técnica</small>
+                            </td>
+                            <td class="price">Desde 60 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Tratamiento nutritivo</strong>
+                                <small>Cuidado cosmético</small>
+                            </td>
+                            <td class="price">20 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Ritual de cuidado capilar</strong>
+                                <small>Un extra de bienestar</small>
+                            </td>
+                            <td class="price">25 €</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Asesoramiento capilar</strong>
+                                <small>Recomendaciones personalizadas</small>
+                            </td>
+                            <td class="price">10 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="disclaimer">
+                    * Tarifas orientativas. El importe final puede variar
+                    según las características del cabello y el servicio.
+                    El presupuesto se confirma antes de comenzar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products container" id="productos">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">TU RITUAL EN CASA</span>
+            <h2>Cuida tu cabello cada día</h2>
+        </div>
+        <p>
+            Productos de cuidado capilar para acompañar tu rutina
+            y mantener tu cabello bonito entre visitas.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card">
+            <div class="product-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"
+                    alt="Productos cosméticos de cuidado personal"
+                    loading="lazy">
+            </div>
+            <div class="product-info">
+                <span class="product-category">LIMPIEZA</span>
+                <h3>Champú profesional</h3>
+                <p>Limpieza adaptada a las características de tu cabello.</p>
+                <span class="product-price">Desde 12 €</span>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80"
+                    alt="Cosmética y cuidado personal"
+                    loading="lazy">
+            </div>
+            <div class="product-info">
+                <span class="product-category">SUAVIDAD</span>
+                <h3>Acondicionador</h3>
+                <p>Ayuda a desenredar y suavizar el cabello.</p>
+                <span class="product-price">Desde 14 €</span>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"
+                    alt="Productos de belleza y cuidado cosmético"
+                    loading="lazy">
+            </div>
+            <div class="product-info">
+                <span class="product-category">NUTRICIÓN</span>
+                <h3>Mascarilla capilar</h3>
+                <p>Aporta acondicionamiento y nutrición cosmética.</p>
+                <span class="product-price">Desde 15 €</span>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=80"
+                    alt="Productos de cuidado y belleza"
+                    loading="lazy">
+            </div>
+            <div class="product-info">
+                <span class="product-category">PROTECCIÓN</span>
+                <h3>Protector térmico</h3>
+                <p>Ayuda a proteger el cabello durante el peinado con calor.</p>
+                <span class="product-price">Desde 14 €</span>
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=80"
+                    alt="Cosmética para una rutina de belleza"
+                    loading="lazy">
+            </div>
+            <div class="product-info">
+                <span class="product-category">BRILLO</span>
+                <h3>Sérum capilar</h3>
+                <p>Aporta brillo y ayuda a controlar el encrespamiento.</p>
+                <span class="product-price">Desde 16 €</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- POR QUÉ LÚMEA -->
+<section class="why-us" id="nosotras">
+    <div class="container">
+        <div class="why-heading">
+            <span class="eyebrow">NUESTRA ESENCIA</span>
+            <h2>¿Por qué elegir LÚMEA?</h2>
+            <p>
+                La diferencia está en cómo te cuidamos. Queremos que
+                encuentres un espacio donde tus preferencias importan
+                y cada decisión se tome pensando en ti.
+            </p>
+        </div>
+
+        <div class="why-grid">
+            <article class="why-item">
+                <span class="why-icon">♡</span>
+                <div>
+                    <h3>Atención personalizada</h3>
+                    <p>Escuchamos tus preferencias y te asesoramos para adaptar el servicio a ti.</p>
+                </div>
+            </article>
+
+            <article class="why-item">
+                <span class="why-icon">✧</span>
+                <div>
+                    <h3>Cuidado femenino</h3>
+                    <p>Una propuesta de peluquería centrada en el cuidado capilar de la mujer.</p>
+                </div>
+            </article>
+
+            <article class="why-item">
+                <span class="why-icon">☼</span>
+                <div>
+                    <h3>Ambiente acogedor</h3>
+                    <p>Un espacio para dedicarte tiempo y disfrutar de tu momento de belleza.</p>
+                </div>
+            </article>
+
+            <article class="why-item">
+                <span class="why-icon">€</span>
+                <div>
+                    <h3>Precios transparentes</h3>
+                    <p>Conoces el presupuesto previsto antes de decidir qué servicio contratar.</p>
+                </div>
+            </article>
+
+            <article class="why-item">
+                <span class="why-icon">◷</span>
+                <div>
+                    <h3>Más comodidad</h3>
+                    <p>Una propuesta orientada a facilitar la organización de tus visitas.</p>
+                </div>
+            </article>
+
+            <article class="why-item">
+                <span class="why-icon">❀</span>
+                <div>
+                    <h3>Cuidados en casa</h3>
+                    <p>Te orientamos sobre productos y rutinas para mantener el cuidado de tu cabello.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- MENSAJE FINAL -->
+<section class="cta">
+    <span class="eyebrow">TU MOMENTO, TU BELLEZA</span>
+    <h2>Regálate un momento<br><em>solo para ti.</em></h2>
+    <p>Descubre LÚMEA y encuentra el cuidado que tu cabello necesita.</p>
+    <a href="#precios" class="btn">DESCUBRIR NUESTRAS TARIFAS →</a>
+</section>
+
+</main>
+
+<footer>
+    <a class="logo" href="#inicio">LÚMEA<span>.</span></a>
+    <p>Belleza, cuidado y bienestar en cada detalle.</p>
+
+    <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Tarifas</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotras">Nuestra esencia</a>
+    </div>
+
+    <small>© 2026 LÚMEA · Todos los derechos reservados.</small>
+</footer>
 
 </body>
-
 </html>
+
